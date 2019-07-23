@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        .botao{
+            width: 300px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            cursor: pointer;
+            background: rgb(148, 141, 141);
+        }
+
+        .div{
+            width: 300px;
+            height: 200px;
+            background: rgb(184, 181, 181);
+        }
+
+        .div2{
+            float: left;
+            margin-right: 20px;
+            margin-left: -300px;
+            margin-top:20px; 
+            width: 300px;
+            height: 200px;
+            background: rgb(184, 181, 181);
+        }
+
+        .posicao{
+            float: left;
+        }
+
+        .hellobar{
+            position: fixed;
+            background: rgb(26, 25, 25);
+            width: 100%;
+            height: 50px;
+        }
+
+        .hellobar span{
+            float: right;
+            font-size: 40px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-right: 20px;
+            color: white;
+        }
+    </style>
+</head>
+<body onload="carregarDiv2()">
+
+    <div class="botao">Botao</div>
+    <div class="div"></div>
+   
+    <div class="div2 ">1</div>
+    <div class="div2">2</div>
+    <div class="div2">3</div>
+</body>
+
+<script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+></script>
+<script>
+
+
+    $(function(){
+
+
+        $('.botao').on('click', ()=>{
+           
+            $('.div2').animate({
+                marginLeft : "20px" 
+            }, 600);          
+        })
+
+        // $('.div2').load(function(){
+        //     var dist = 0;
+        //     dist += 315;
+        //     console.log('here');
+        //     $(this).animate({
+        //         marginLeft : dist
+        //     }, 1500);
+        // });
+
+    });
+
+    // function carregarDiv2(){
+
+    //     $('.div2').first().animate({
+    //         marginLeft : "0px" 
+    //     }, 1000, function carregar(){
+    //         $(this).next().animate({marginLeft : "0px"}, 1000, carregar)
+    //     });   
+    // }
+
+    function carregarDiv2(){
+
+        $('.div2').animate({
+            marginLeft : "0px",
+            marginRight: "20px" 
+        }, 2000); 
+    }
+</script>
+</html>

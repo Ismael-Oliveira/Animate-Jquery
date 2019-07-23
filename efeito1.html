@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        .botao{
+            width: 300px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            cursor: pointer;
+            background: rgb(148, 141, 141);
+        }
+
+        .div{
+            width: 300px;
+            height: 400px;
+            background: rgb(184, 181, 181);
+        }
+
+        .hellobar{
+            position: fixed;
+            background: rgb(26, 25, 25);
+            width: 100%;
+            height: 50px;
+        }
+
+        .hellobar span{
+            float: right;
+            font-size: 40px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-right: 20px;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="hellobar">
+        <span>&times</span>
+    </div>
+    <div class="botao">Botao</div>
+    <div class="div"></div>
+
+</body>
+
+<script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+></script>
+<script>
+
+
+    $(function(){
+
+        // $('.botao').on('click', ()=>{
+        //     $('.div').toggle(1000);
+        // })
+        $('.botao').on('click', ()=>{
+            $('.div').fadeTo('slow', 0.1, function(){
+                $(this).fadeTo('slow', 1);
+            });
+        })
+
+        $('span').on('click', ()=>{
+            $('.hellobar').slideUp('slow');
+        })
+
+    });
+
+
+</script>
+</html>
